@@ -26,8 +26,9 @@ const OnboardingForm = () => {
       const response = await axiosInstance.post("/organizations", formData);
       console.log("Organization created:", response.data);
       toast.success("Organization created successfully");
-      router.refresh()
-      router.replace("/");
+      // router.refresh()
+      // router.replace("/");
+      router.push("/")
     } catch (err: any) {
       setError(err.message || "Something went wrong");
       toast.error("Error in onboarding", { description: err.message });
